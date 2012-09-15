@@ -1,1 +1,26 @@
 %h1 Cesar
+%br
+%h2 Criptografar
+%form{:class => "form", :method => :post, :action => "/cesar/criptografar"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase", :name => "frase"}
+  %br
+  %input{:class => "input-mini", :type => "text", :placeholder => "Cifra", :name => "cifra"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Criptografar
+%h2 Descriptografar
+%form{:class => "form", :method => :post, :action => "/cesar/descriptografar"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a senha", :name => "senha"}
+  %br
+  %input{:class => "input-mini", :type => "text", :placeholder => "Cifra", :name => "cifra"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Descriptografar      
+%h2 Descobrir Cifra
+%form{:class => "form", :method => :post, :action => "/cesar/cifra"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase", :name => "frase"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase criptografada", :name => "senha"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Descobrir  
+%h2 Possibilidades
+%form{:class => "form-inline", :method => :post, :action => "/cesar/possibilidades"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a senha", :name => "senha"}
+  %button{:class => "btn btn-primary", :type => "submit"} Exibir  

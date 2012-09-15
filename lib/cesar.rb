@@ -1,36 +1,33 @@
 class Cesar
 
-  ALFABETO = ("a".."z").to_a + (0..9).to_a
+  ALFABETO = ("a".."z").to_a + ("0".."9").to_a
   
   def initialize
     @possibilidades = []
   end
 
+  def possibilidades
+    @possibilidades
+  end
+
   def quebrar(senha)    
     caracteres = senha.split("")            
     ALFABETO.size.times do |i|
-      caracteres.map! { |c| move_casa(c) }  
-      @possibilidades << caracteres.join("")
+      caracteres.map! { |c| move_casa(c) }      
+      @possibilidades << converte_case(caracteres.join, senha)
     end
   end
 
   def move_casa(c)
-    return "a"  if c == 9  
-    return " "  if c == " "  
-    
-    c.downcase! unless c.kind_of?(Integer)
-    return ALFABETO[ALFABETO.index(c) + 1]
+    return "a"  if c == "9"  
+    return " "  if c == " "         
+    return ALFABETO[ALFABETO.index(c.downcase) + 1]
   end
 
-  def listar_possibilidades
-    @possibilidades.reverse.each_with_index do |p, i|
-      puts "#{p} - #{i}"
-    end
+  def converte_case(frase, original)
+    caracteres = frase.split("")    
+    caracteres.map!.with_index { |p, i| original[i] == original[i].upcase ? p.upcase : p }
+    caracteres.join
   end
 
 end
-
-# cesar = Cesar.new
-# cesar.quebrar("mrvxh")
-# cesar.listar_possibilidades
-# cesar.revelar_cifra

@@ -1,0 +1,16 @@
+%h1 Cesar
+%br
+%h3= "Possibilidades para: #{params[:senha]}"
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th.span1 Cifra
+      %th Possibilidade
+  %tbody
+    - @possibilidades.each_with_index do |senha, indice|
+      %tr
+        %td= indice
+        %td= senha
+%a{:href => "/cesar", :class => "btn btn-primary"} 
+  %i{:class => "icon-white icon-arrow-left"} 
+  = "&nbsp;Voltar"

@@ -1,0 +1,16 @@
+%h1 Cesar
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th.span1 Cifra
+      %th Frase
+      %th Frase criptografada
+  %tbody
+    %tr
+      %td= params[:cifra]
+      %td= params[:frase]
+      %td= @senha
+
+%a{:href => "/cesar", :class => "btn btn-primary"} 
+  %i{:class => "icon-white icon-arrow-left"} 
+  = "&nbsp;Voltar"
