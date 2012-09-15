@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Sinatra app
+    %script{:src => "/lib/jquery-1.7.2.min.js", :type => "text/javascript"}
+    %script{:src => "/lib/bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
+    %link{:rel => "stylesheet", :href => "/lib/bootstrap/css/bootstrap.min.css"}
+  
+  %body{:style => "padding-top: 50px"}
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a{:class => "brand", :href => "#"} GOFactory
+          %ul.nav
+            %li
+              %a{:href => "/"}="Início"
+
+    .container
+      = yield
