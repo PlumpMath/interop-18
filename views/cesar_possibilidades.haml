@@ -1,6 +1,11 @@
 %h1 Cesar
 %br
-%h3= "Possibilidades para: #{params[:senha]}"
+.container
+  .row{:style => "text-align: center;"}
+    %img{:src => "/lib/yao-ming-meme.jpg"}
+%br
+%br
+%h3= "Senhas descriptografadas para: #{params[:senha]}"
 %table{:class => "table table-striped"}
   %thead
     %tr
@@ -8,6 +13,7 @@
       %th Possibilidade
   %tbody
     - @possibilidades.each_with_index do |senha, indice|
+      - next if indice == 0
       %tr
         %td= indice
         %td= senha

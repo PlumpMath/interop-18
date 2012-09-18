@@ -1,0 +1,23 @@
+%h1 Vigenere
+%br
+%h2 Criptografar
+%form{:class => "form", :method => :post, :action => "/vigenere/criptografar"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase", :name => "frase"}
+  %br
+  %input{:class => "input", :type => "text", :placeholder => "Chave", :name => "chave"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Criptografar
+%h2 Descriptografar
+%form{:class => "form", :method => :post, :action => "/vigenere/descriptografar"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite frase criptografada", :name => "frase"}
+  %br
+  %input{:class => "input", :type => "text", :placeholder => "Chave", :name => "chave"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Descriptografar  
+%h2 Descobrir Chave
+%form{:class => "form", :method => :post, :action => "/vigenere/calcula_chave"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite frase", :name => "frase"}
+  %br
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite frase criptografada", :name => "senha"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Descobrir    

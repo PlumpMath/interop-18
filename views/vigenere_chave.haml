@@ -1,0 +1,22 @@
+%h1 Vigenere
+%br
+.container
+  .row{:style => "text-align: center;"}
+    %img{:src => "/lib/not-bad-meme.jpg"}
+%br
+%br
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th.span1 Chave
+      %th Frase
+      %th Frase criptografada
+  %tbody
+    %tr
+      %td= @chave
+      %td= params[:frase]
+      %td= params[:senha]
+
+%a{:href => "/vigenere", :class => "btn btn-primary"} 
+  %i{:class => "icon-white icon-arrow-left"} 
+  = "&nbsp;Voltar"

@@ -1,0 +1,16 @@
+%h1 Vigenere
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th.span1 Chave
+      %th Frase criptografada
+      %th Frase      
+  %tbody
+    %tr
+      %td= params[:chave]
+      %td= params[:frase]
+      %td= @senha
+
+%a{:href => "/vigenere", :class => "btn btn-primary"} 
+  %i{:class => "icon-white icon-arrow-left"} 
+  = "&nbsp;Voltar"
