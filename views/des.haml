@@ -1,0 +1,16 @@
+%h1 DES
+%br
+%h2 Criptografar
+%form{:class => "form", :method => :post, :action => "/des/criptografar"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase", :name => "frase"}
+  %br
+  %input{:class => "input", :type => "text", :placeholder => "Chave (8 caracteres)", :name => "chave"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Criptografar
+%h2 Descriptografar
+%form{:class => "form", :method => :post, :action => "/des/descriptografar"}
+  %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a senha", :name => "senha"}
+  %br
+  %input{:class => "input", :type => "text", :placeholder => "Chave (8 caracteres)", :name => "chave"}
+  %br
+  %button{:class => "btn btn-primary", :type => "submit"} Descriptografar      

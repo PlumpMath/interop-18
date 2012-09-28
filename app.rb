@@ -4,6 +4,8 @@ require 'rubygems'
 require 'sinatra'
 require 'lib/cesar'
 require 'lib/vigenere'
+require 'lib/rail_fence'
+require 'lib/des'
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
@@ -13,27 +15,27 @@ get '/' do
   haml :index
 end
 
-#######################
-# ALGORITIMO DE CESAR #
-#######################
+#########
+# CESAR #
+#########
 
 get '/cesar' do
   haml :cesar
 end
 
 post '/cesar/criptografar' do
-  @senha = Cesar.encode(params[:frase], params[:cifra].to_i)
+  @senha = Cesar.encode(params[:frase], params[:chave].to_i)
   haml :cesar_criptografar
 end
 
 post '/cesar/descriptografar' do
-  @frase = Cesar.decode(params[:senha], params[:cifra].to_i)
+  @frase = Cesar.decode(params[:senha], params[:chave].to_i)
   haml :cesar_descriptografar
 end
 
-post '/cesar/cifra' do
-  @cifra = Cesar::ALFABETO.size.times.collect { |i| Cesar.encode(params[:frase], i) }.index(params[:senha])
-  haml :cesar_cifra
+post '/cesar/chave' do
+  @chave = Cesar.chave(params[:frase], params[:senha])
+  haml :cesar_chave
 end
 
 post '/cesar/possibilidades' do
@@ -41,9 +43,9 @@ post '/cesar/possibilidades' do
   haml :cesar_possibilidades
 end
 
-##########################
-# ALGORITIMO DE VIGERINE #
-##########################
+############
+# VIGENERE #
+############
 
 get '/vigenere' do
   haml :vigenere
@@ -55,11 +57,57 @@ post '/vigenere/criptografar' do
 end
 
 post '/vigenere/descriptografar' do
-  @senha = Vigenere.decode(params[:frase], params[:chave])
+  @frase = Vigenere.decode(params[:senha], params[:chave])
   haml :vigenere_descriptografar
 end
 
 post '/vigenere/calcula_chave' do  
   @chave = Vigenere.chave(params[:frase],params[:senha])
   haml :vigenere_chave
+end
+
+##############
+# RAIL FENCE #
+##############
+
+get '/rail_fence' do
+  haml :rail_fence
+end
+
+post '/rail_fence/criptografar' do
+  @senha = RailFence.encode(params[:frase], params[:chave].to_i)
+  haml :rail_fence_criptografar
+end
+
+post '/rail_fence/descriptografar' do
+  @frase = RailFence.decode(params[:senha], params[:chave].to_i)
+  haml :rail_fence_descriptografar 
+end
+
+post '/rail_fence/chave' do
+  @chave = RailFence.chave(params[:frase], params[:senha])
+  haml :rail_fence_chave
+end
+
+post '/rail_fence/possibilidades' do
+  @possibilidades = 1.upto(params[:senha].gsub(/\s+/, "").size).collect { |i| RailFence.decode(params[:senha], i) }
+  haml :rail_fence_possibilidades
+end
+
+#######
+# DES #
+#######
+
+get '/des' do
+  haml :des
+end
+
+post '/des/criptografar' do
+  @senha = Des.encode(params[:frase], params[:chave])
+  haml :des_criptografar
+end
+
+post '/des/descriptografar' do
+  @frase = Des.decode(params[:senha], params[:chave])
+  haml :des_descriptografar 
 end

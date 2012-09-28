@@ -1,4 +1,4 @@
-%h1 Cesar
+%h1 Rail Fence
 %br
 %br
 %h3= "Senhas descriptografadas para: #{params[:senha]}"
@@ -9,10 +9,9 @@
       %th Possibilidade
   %tbody
     - @possibilidades.each_with_index do |senha, indice|
-      - next if indice == 0
       %tr
-        %td= indice
+        %td= indice+1
         %td= senha
-%a{:href => "/cesar", :class => "btn btn-primary"} 
+%a{:href => "/rail_fence", :class => "btn btn-primary"} 
   %i{:class => "icon-white icon-arrow-left"} 
   = "&nbsp;Voltar"

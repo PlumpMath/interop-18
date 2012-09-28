@@ -1,26 +1,26 @@
-%h1 Cesar
+%h1 Rail Fence
 %br
 %h2 Criptografar
-%form{:class => "form", :method => :post, :action => "/cesar/criptografar"}
+%form{:class => "form", :method => :post, :action => "/rail_fence/criptografar"}
   %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase", :name => "frase"}
   %br
   %input{:class => "input-mini", :type => "text", :placeholder => "Chave", :name => "chave"}
   %br
   %button{:class => "btn btn-primary", :type => "submit"} Criptografar
 %h2 Descriptografar
-%form{:class => "form", :method => :post, :action => "/cesar/descriptografar"}
+%form{:class => "form", :method => :post, :action => "/rail_fence/descriptografar"}
   %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a senha", :name => "senha"}
   %br
   %input{:class => "input-mini", :type => "text", :placeholder => "Chave", :name => "chave"}
   %br
   %button{:class => "btn btn-primary", :type => "submit"} Descriptografar      
 %h2 Descobrir Chave
-%form{:class => "form", :method => :post, :action => "/cesar/chave"}
+%form{:class => "form", :method => :post, :action => "/rail_fence/chave"}
   %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase", :name => "frase"}
   %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a frase criptografada", :name => "senha"}
   %br
   %button{:class => "btn btn-primary", :type => "submit"} Descobrir  
 %h2 Quebrar senha
-%form{:class => "form-inline", :method => :post, :action => "/cesar/possibilidades"}
+%form{:class => "form-inline", :method => :post, :action => "/rail_fence/possibilidades"}
   %input{:class => "input-xxlarge", :type => "text", :placeholder => "Digite a senha", :name => "senha"}
-  %button{:class => "btn btn-primary", :type => "submit"} Exibir  
+  %button{:class => "btn btn-primary", :type => "submit"} Exibir    
