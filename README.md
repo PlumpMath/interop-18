@@ -10,13 +10,12 @@ Alunos:
 
 Algorítimos
 -----------
+Os algorítimos estão na pasta lib, os demais arquivos são para controle da aplicação e interface gráfica
 
 * [Cesar](https://github.com/josuelima/interop/blob/master/lib/cesar.rb)
 * [Vigenere](http://github.com/josuelima/interop/blob/master/lib/vigenere.rb)
 * [Rail Fence](http://github.com/josuelima/interop/blob/master/lib/rail_fence.rb)
 * [DES](http://github.com/josuelima/interop/blob/master/lib/des.rb)
-
-Os algorítimos estão na pasta lib
 
 Sistema em execução
 -------------------
